@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-db-kube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: mysqldb-pod
+      tier: database
+  template:
+    metadata:
+      labels:
+        name: mysqldb-pod
+        tier: database
+    spec:      
+      containers:
+        - name: mysqldb-container
+          image: aangdocker/mysql_db_image:latest

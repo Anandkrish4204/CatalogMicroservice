@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sql-db-environment-values
+data:
+  SQL_DB_HOST: SQL_DB_HOST
+  MYSQL_SCHEMA: e_grocery
+  MYSQL_USERNAME: admin
+  MYSQL_PASSWORD: admin

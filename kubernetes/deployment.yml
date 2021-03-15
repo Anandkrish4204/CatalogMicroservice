@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-kube-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: catalog-pod
+  template:
+    metadata:
+      labels:
+        name: catalog-pod
+    spec:
+      containers:
+        - name: catalog-container
+          image: aangdocker/catalog-app
+          env:
+            - name: MYSQL_SCHEMA
+              value: e_grocery
+            - name: MYSQL_USERNAME
+              value: admin
+            - name: MYSQL_PASSWORD
+              value: admin
+            - name: SQL_DB_HOST
+              value: localhost
+        - name: mysqldb-container
+          image: aangdocker/mysql_db_image
