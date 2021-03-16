@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: catalog-container
-          image: aangdocker/catalog-app
+          image: aangdocker/catalog-app:latest
           env:
             - name: MYSQL_SCHEMA
               value: e_grocery
@@ -22,7 +22,7 @@ spec:
               value: admin
             - name: MYSQL_PASSWORD
               value: admin
-            - name: SQL_DB_HOST
-              value: localhost
-        - name: mysqldb-container
-          image: aangdocker/mysql_db_image
+        #     - name: SQL_DB_HOST
+        #       value: localhost
+        # - name: mysqldb-container
+        #   image: aangdocker/mysql_db_image
